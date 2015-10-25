@@ -26,7 +26,7 @@ if ( ! cli.input.length ) {
   throw new Error( 'Project path is not defined' );
 }
 
-let creditPath = path.resolve( process.cwd(), process.argv[ 2 ] );
+var creditPath = path.resolve( process.cwd(), process.argv[ 2 ] );
 
 credits( creditPath )
   .then( printCredits )
