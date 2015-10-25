@@ -27,4 +27,4 @@ Examples
   $ credits /projects/foo --include-package
 ```
 
-### I want to thank all these [people](./THANKS.md)!!!
+#### I want to thank all these [people](./THANKS.md) for their great work!!!
