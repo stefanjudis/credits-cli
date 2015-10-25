@@ -1,6 +1,6 @@
 # Thank you open source community!
 
-credits-cli relies on the work of 165 people.
+credits-cli relies on the work of 196 people.
 
 - Sindre Sorhus sindresorhus@gmail.com (92 package(s))
 - John-David Dalton john.david.dalton@gmail.com (30 package(s))
