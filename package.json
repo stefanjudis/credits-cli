@@ -1,0 +1,37 @@
+{
+  "name": "credits-cli",
+  "version": "1.0.0",
+  "description": "https://github.com/stefanjudis/credits-cli",
+  "bin": {
+    "credits": "cli.js"
+  },
+  "scripts": {
+    "lint": "eslint *.js",
+    "test": "npm run lint && nyc ava *.spec.js",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanjudis/credits-cli.git"
+  },
+  "author": "Stefan Judis <stefanjudis@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stefanjudis/credits-cli/issues"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "homepage": "https://github.com/stefanjudis/credits-cli#readme",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "credits": "^1.0.0",
+    "meow": "^3.4.2"
+  },
+  "devDependencies": {
+    "ava": "^0.3.0",
+    "eslint": "^1.7.3",
+    "nyc": "^3.2.2",
+    "tmp": "0.0.28"
+  }
+}
