@@ -3,6 +3,10 @@ import test from 'ava';
 import tmp from 'tmp';
 import fs from 'fs';
 
+// import it so that
+// nyc gets it for code coverage check
+import credits from './cli.js';
+
 function createDummyProject( callback ) {
   tmp.dir( { unsafeCleanup : true }, ( error, path, cleanUpCb ) => {
     fs.mkdirSync( `${path}/node_modules` );

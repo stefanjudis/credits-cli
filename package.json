@@ -7,7 +7,7 @@
   },
   "scripts": {
     "lint": "eslint *.js",
-    "test": "npm run lint && nyc ava *.spec.js",
+    "test": "npm run lint && nyc ava cli.spec.js",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "ava": "^0.3.0",
+    "coveralls": "^2.11.4",
     "eslint": "^1.7.3",
     "nyc": "^3.2.2",
     "tmp": "0.0.28"
