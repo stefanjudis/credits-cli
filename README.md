@@ -17,6 +17,8 @@ npm install -g credits-cli
 
 ## Basic usage
 
+`credits` will check all `node_modules` recursively and evaluate the **Author** and **Maintainers** of the **installed** dependencies included in the set path.
+
 ```
 Usage
   $ credits <path>
