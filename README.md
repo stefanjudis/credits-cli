@@ -19,3 +19,5 @@ Examples
   $ credits /projects/foo
   $ credits /projects/foo --include-package
 ```
+
+### So thanks to all these [people](./THANKS.md)!!!
