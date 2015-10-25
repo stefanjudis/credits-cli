@@ -1,25 +1,26 @@
 #!/usr/bin/env node
 'use strict';
 
-const credits = require( 'credits' );
-const chalk   = require( 'chalk' );
-const path    = require( 'path' );
-const meow    = require( 'meow' );
-const cli     = meow( `
-  Usage
-    $ credits <path>
-
-  Options
-    -i, --include-packages  Show packages maintained by person
-
-  Examples
-    $ credits /projects/foo
-    $ credits /projects/foo --include-packages
-`, {
-  alias : {
-    i : 'includePackages'
+var credits = require( 'credits' );
+var chalk   = require( 'chalk' );
+var path    = require( 'path' );
+var meow    = require( 'meow' );
+var cli     = meow(
+  '  Usage\n' +
+  '    $ credits <path>\n' +
+  '\n' +
+  '  Options\n' +
+  '    -i, --include-packages  Show packages maintained by person\n' +
+  '\n' +
+  '  Examples\n' +
+  '    $ credits /projects/foo\n' +
+  '    $ credits /projects/foo --include-packages\n',
+  {
+    alias : {
+      i : 'includePackages'
+    }
   }
-} );
+);
 
 if ( ! cli.input.length ) {
   throw new Error( 'Project path is not defined' );
@@ -40,13 +41,13 @@ credits( creditPath )
  * @param  {Array} credits credits
  */
 function printCredits( credits ) {
-  let projectName = creditPath.split( path.sep ).pop();
+  var projectName = creditPath.split( path.sep ).pop();
 
-  console.log( chalk.blue( `-> Credits for ${projectName}` ) );
-  console.log( `${projectName} relies on the work of ${credits.length} people.\n` );
+  console.log( chalk.blue( '-> Credits for ' + projectName ) );
+  console.log( projectName + ' relies on the work of ' + credits.length +' people.\n' );
 
   credits.forEach( function( credit ) {
-    let columns = [
+    var columns = [
       chalk.blue( credit.name )
     ];
 
@@ -54,10 +55,10 @@ function printCredits( credits ) {
       columns.push( chalk.red( credit.email || '' ) );
     }
 
-    columns.push( `(${credit.packages.length} package(s))` );
+    columns.push( '(' + credit.packages.length + ' package(s))' );
 
     if ( cli.flags.includePackages ) {
-      columns.push( `[ ${credit.packages.join( ', ' )} ]` );
+      columns.push( '[ ' + credit.packages.join( ', ' ) + ' ]' );
     }
 
     console.log( columns.join( ' ' ) );
