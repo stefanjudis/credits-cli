@@ -74,10 +74,10 @@ test( 'credits - folder exists - without included packages', t => {
 
     let result = fs.readFileSync( `${path}/test.txt`, { encoding : 'utf8' } ).split( '\n' );
 
-    t.same( result[ 3 ], 'Alice Bobson (3 package(s))' );
-    t.same( result[ 4 ], 'Bob Calsow bob@calsow.io (2 package(s))' );
-    t.same( result[ 5 ], 'Randy Ran (1 package(s))' );
-    t.same( result[ 6 ], 'Bobby Bob bobby@bob.io (1 package(s))' );
+    t.same( result[ 3 ], 'Alice Bobson (3 packages)' );
+    t.same( result[ 4 ], 'Bob Calsow bob@calsow.io (2 packages)' );
+    t.same( result[ 5 ], 'Randy Ran (1 package)' );
+    t.same( result[ 6 ], 'Bobby Bob bobby@bob.io (1 package)' );
     t.end();
 
     callback();
@@ -93,10 +93,10 @@ test( 'credits - folder exists - with included packages', t => {
 
     let result = fs.readFileSync( `${path}/test.txt`, { encoding : 'utf8' } ).split( '\n' );
 
-    t.same( result[ 3 ], 'Alice Bobson (3 package(s)) [ bar, boom, baz ]' );
-    t.same( result[ 4 ], 'Bob Calsow bob@calsow.io (2 package(s)) [ boing, foo ]' );
-    t.same( result[ 5 ], 'Randy Ran (1 package(s)) [ baz ]' );
-    t.same( result[ 6 ], 'Bobby Bob bobby@bob.io (1 package(s)) [ baz ]' );
+    t.same( result[ 3 ], 'Alice Bobson (3 packages) [ bar, boom, baz ]' );
+    t.same( result[ 4 ], 'Bob Calsow bob@calsow.io (2 packages) [ boing, foo ]' );
+    t.same( result[ 5 ], 'Randy Ran (1 package) [ baz ]' );
+    t.same( result[ 6 ], 'Bobby Bob bobby@bob.io (1 package) [ baz ]' );
     t.end();
 
     callback();
