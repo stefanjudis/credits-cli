@@ -26,7 +26,7 @@ Options
   -i, --include-packages  Show packages maintained by person
 Examples
   $ credits /projects/foo
-  $ credits /projects/foo --include-package
+  $ credits /projects/foo --include-packages
 ```
 
 #### I want to thank all these [people](./THANKS.md) for their great work!!!
