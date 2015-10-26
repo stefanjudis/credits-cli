@@ -26,7 +26,8 @@
   "dependencies": {
     "chalk": "^1.1.1",
     "credits": "^1.0.1",
-    "meow": "^3.4.2"
+    "meow": "^3.4.2",
+    "plur": "^2.0.0"
   },
   "devDependencies": {
     "ava": "^0.3.0",

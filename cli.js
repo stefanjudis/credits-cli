@@ -5,6 +5,7 @@ var credits = require( 'credits' );
 var chalk   = require( 'chalk' );
 var path    = require( 'path' );
 var meow    = require( 'meow' );
+var plur    = require( 'plur' );
 var cli     = meow(
   '  Usage\n' +
   '    $ credits <path>\n' +
@@ -55,7 +56,9 @@ function printCredits( credits ) {
       columns.push( chalk.red( credit.email || '' ) );
     }
 
-    columns.push( '(' + credit.packages.length + ' package(s))' );
+    var pkgCount = credit.packages.length;
+
+    columns.push( '(' + pkgCount + ' ' + plur( 'package', pkgCount ) + ')' );
 
     if ( cli.flags.includePackages ) {
       columns.push( '[ ' + credit.packages.join( ', ' ) + ' ]' );
