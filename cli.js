@@ -23,11 +23,7 @@ var cli     = meow(
   }
 );
 
-if ( ! cli.input.length ) {
-  throw new Error( 'Project path is not defined' );
-}
-
-var creditPath = path.resolve( process.cwd(), process.argv[ 2 ] );
+var creditPath = path.resolve( process.cwd(), cli.input[ 0 ] || '.' );
 
 credits( creditPath )
   .then( printCredits )
