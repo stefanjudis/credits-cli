@@ -1,29 +1,44 @@
 #!/usr/bin/env node
 'use strict';
 
-var credits = require( 'credits' );
-var chalk   = require( 'chalk' );
-var path    = require( 'path' );
-var meow    = require( 'meow' );
-var plur    = require( 'plur' );
-var cli     = meow(
-  '  Usage\n' +
-  '    $ credits <path>\n' +
-  '\n' +
-  '  Options\n' +
-  '    -i, --include-packages  Show packages maintained by person\n' +
-  '\n' +
-  '  Examples\n' +
-  '    $ credits /projects/foo\n' +
-  '    $ credits /projects/foo --include-packages\n',
+let credits = require( 'credits' );
+let path    = require( 'path' );
+let meow    = require( 'meow' );
+let fs      = require( 'fs' );
+let cli     = meow( `
+  Usage
+    $ credits <path>
+
+  Options
+    -r, --reporter Choose repoter to format output [ minimal, extended, markdown ]
+
+  Examples
+    $ credits /projects/foo
+    $ credits /projects/foo --reporter extended
+    $ credits /projects/foo --reporter markdown > THANKS.md`,
   {
     alias : {
-      i : 'includePackages'
+      r : 'reporter'
     }
   }
 );
 
-var creditPath = path.resolve( process.cwd(), cli.input[ 0 ] || '.' );
+
+let reporters = fs.readdirSync( './reporters' ).reduce(
+  function( reporters, reporter ) {
+    if ( ! /spec.js/.test( reporter ) ) {
+      reporter = reporter.replace( '.js', '' );
+      reporters[ reporter ] = require( './reporters/' + reporter );
+    }
+
+    return reporters;
+  },
+  {}
+);
+
+let reporter = reporters[ cli.flags.reporter ] || reporters.minimal;
+
+let creditPath = path.resolve( process.cwd(), cli.input[ 0 ] || '.' );
 
 credits( creditPath )
   .then( printCredits )
@@ -38,28 +53,7 @@ credits( creditPath )
  * @param  {Array} credits credits
  */
 function printCredits( credits ) {
-  var projectName = creditPath.split( path.sep ).pop();
+  let projectName = creditPath.split( path.sep ).pop();
 
-  console.log( chalk.blue( '-> Credits for ' + projectName ) );
-  console.log( projectName + ' relies on the work of ' + credits.length +' people.\n' );
-
-  credits.forEach( function( credit ) {
-    var columns = [
-      chalk.blue( credit.name )
-    ];
-
-    if ( credit.email ) {
-      columns.push( chalk.red( credit.email || '' ) );
-    }
-
-    var pkgCount = credit.packages.length;
-
-    columns.push( '(' + pkgCount + ' ' + plur( 'package', pkgCount ) + ')' );
-
-    if ( cli.flags.includePackages ) {
-      columns.push( '[ ' + credit.packages.join( ', ' ) + ' ]' );
-    }
-
-    console.log( columns.join( ' ' ) );
-  } );
+  console.log( reporter( projectName, credits ) );
 }

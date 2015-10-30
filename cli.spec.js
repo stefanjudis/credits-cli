@@ -65,7 +65,7 @@ function createDummyProject( callback ) {
 }
 
 
-test( 'credits - folder exists - without included packages', t => {
+test( 'credits - folder exists', t => {
   createDummyProject( ( path, callback ) => {
     childProcess.execSync(
       `./cli.js ${path} > ${path}/test.txt`,
@@ -78,25 +78,6 @@ test( 'credits - folder exists - without included packages', t => {
     t.same( result[ 4 ], 'Bob Calsow bob@calsow.io (2 packages)' );
     t.same( result[ 5 ], 'Randy Ran (1 package)' );
     t.same( result[ 6 ], 'Bobby Bob bobby@bob.io (1 package)' );
-    t.end();
-
-    callback();
-  } );
-} );
-
-test( 'credits - folder exists - with included packages', t => {
-  createDummyProject( ( path, callback ) => {
-    childProcess.execSync(
-      `./cli.js ${path} -i > ${path}/test.txt`,
-      { cwd : __dirname }
-    );
-
-    let result = fs.readFileSync( `${path}/test.txt`, { encoding : 'utf8' } ).split( '\n' );
-
-    t.same( result[ 3 ], 'Alice Bobson (3 packages) [ bar, boom, baz ]' );
-    t.same( result[ 4 ], 'Bob Calsow bob@calsow.io (2 packages) [ boing, foo ]' );
-    t.same( result[ 5 ], 'Randy Ran (1 package) [ baz ]' );
-    t.same( result[ 6 ], 'Bobby Bob bobby@bob.io (1 package) [ baz ]' );
     t.end();
 
     callback();
