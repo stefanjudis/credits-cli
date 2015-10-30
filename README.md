@@ -22,11 +22,24 @@ npm install -g credits-cli
 ```
 Usage
   $ credits <path>
+
 Options
-  -i, --include-packages  Show packages maintained by person
+  -r, --reporter Choose repoter to format output [ minimal, extended, markdown ]
+
 Examples
   $ credits /projects/foo
-  $ credits /projects/foo --include-packages
+  $ credits /projects/foo --reporter extended
+  $ credits /projects/foo --reporter markdown > THANKS.md
 ```
+
+### Examples
+
+You can use credits to generate a `THANKS.md` files easily by running:
+
+```
+$ credits . --reporter markdown > THANKS.md
+```
+
+***************
 
 #### I want to thank all these [people](./THANKS.md) for their great work!!!

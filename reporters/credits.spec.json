@@ -1,0 +1,15 @@
+[
+  {
+    "name"     : "Alice Bobson",
+    "packages" : [ "foo", "bar", "baz" ]
+  },
+  {
+    "name"     : "Bob Calsow",
+    "email"    : "bob@calsow.io",
+    "packages" : [ "foo", "bar" ]
+  },
+  {
+    "name"     : "Jonny John",
+    "packages" : [ "foo" ]
+  }
+]
