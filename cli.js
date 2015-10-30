@@ -10,7 +10,7 @@ let cli     = meow( `
     $ credits <path>
 
   Options
-    -r, --reporter Choose repoter to format output [ minimal, extended, markdown ]
+    -r, --reporter Choose reporter to format output [ minimal, extended, markdown ]
 
   Examples
     $ credits /projects/foo
