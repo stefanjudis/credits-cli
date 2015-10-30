@@ -24,7 +24,7 @@ let cli     = meow( `
 );
 
 
-let reporters = fs.readdirSync( './reporters' ).reduce(
+let reporters = fs.readdirSync( path.resolve( __dirname, 'reporters' ) ).reduce(
   function( reporters, reporter ) {
     if ( ! /spec.js/.test( reporter ) ) {
       reporter = reporter.replace( '.js', '' );
