@@ -34,7 +34,7 @@ Examples
 
 ### Examples
 
-You can use credits to generate a `THANKS.md` files easily by running:
+You can use `credits` to generate a `THANKS.md` files easily by running:
 
 ```
 $ credits . --reporter markdown > THANKS.md
