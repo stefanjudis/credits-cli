@@ -1,6 +1,6 @@
 {
   "name": "credits-cli",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "https://github.com/stefanjudis/credits-cli",
   "bin": {
     "credits": "cli.js"
