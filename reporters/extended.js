@@ -11,19 +11,37 @@ module.exports = function( name, credits ) {
 
   credits.forEach( function( credit ) {
     let columns = [
-      chalk.blue( credit.name )
+      [ chalk.blue( credit.name ) ],
+      [],
+      []
     ];
 
     if ( credit.email ) {
-      columns.push( chalk.red( credit.email || '' ) );
+      columns[ 1 ].push( 'Mail: ' + chalk.red( credit.email ) );
+    }
+
+    if ( credit.github ) {
+      columns[ 1 ].push( 'GitHub: ' + chalk.red( credit.github ) );
+    }
+
+    if ( credit.twitter ) {
+      columns[ 1 ].push( 'Twitter: ' + chalk.red( '@' + credit.twitter ) );
     }
 
     let pkgCount = credit.packages.length;
 
-    columns.push( `(${pkgCount } ${plur( 'package', pkgCount )})` );
-    columns.push( '[ ' + credit.packages.join( ', ' ) + ' ]' );
+    columns[ 2 ].push( `${pkgCount } ${plur( 'package', pkgCount )}:` );
+    columns[ 2 ].push( credit.packages.join( ', ' ) );
 
-    report += `${columns.join( ' ' )}\n`;
+    columns = columns.reduce( ( columns, column ) => {
+      if ( column.length ) {
+        columns.push( column.join( ' ' ) );
+      }
+
+      return columns;
+    }, [] );
+
+    report += `${columns.join( '\n' )}\n\n`;
   } );
 
   return report;

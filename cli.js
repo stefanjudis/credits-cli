@@ -23,7 +23,6 @@ let cli     = meow( `
   }
 );
 
-
 let reporters = fs.readdirSync( path.resolve( __dirname, 'reporters' ) ).reduce(
   function( reporters, reporter ) {
     if ( ! /spec.js/.test( reporter ) ) {
@@ -43,7 +42,9 @@ let creditPath = path.resolve( process.cwd(), cli.input[ 0 ] || '.' );
 credits( creditPath )
   .then( printCredits )
   .catch( function( error ) {
-    throw error;
+    console.log( error );
+
+    process.exit( 1 );
   } );
 
 
