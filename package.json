@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "ava": "^0.6.0",
-    "coveralls": "^2.11.4",
+    "coveralls": "^2.11.5",
     "eslint": "^1.7.3",
     "nyc": "^4.0.1",
     "tmp": "0.0.28"
