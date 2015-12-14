@@ -30,7 +30,7 @@
     "plur": "^2.0.0"
   },
   "devDependencies": {
-    "ava": "^0.6.0",
+    "ava": "^0.8.0",
     "coveralls": "^2.11.4",
     "eslint": "^1.7.3",
     "nyc": "^4.0.1",
