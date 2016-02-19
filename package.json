@@ -32,7 +32,7 @@
   "devDependencies": {
     "ava": "^0.6.0",
     "coveralls": "^2.11.4",
-    "eslint": "^1.7.3",
+    "eslint": "^2.2.0",
     "nyc": "^5.0.1",
     "tmp": "0.0.28"
   }
