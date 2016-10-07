@@ -2,7 +2,7 @@ import test from 'ava';
 import extended from './extended';
 import credits from './credits.spec.json';
 
-test.only( 'extended reporter', t => {
+test( 'extended reporter', t => {
 
   let result = extended( 'foo', credits ).split( '\n' );
 
