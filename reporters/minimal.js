@@ -8,7 +8,7 @@ module.exports = function( name, credits ) {
 
   let len = 0;
   for (let pack in credits) {
-    len += pack.length;
+    len += credits[pack].length;
   }
 
   report += `${name} relies on the work of ${len} people:\n\n`;
