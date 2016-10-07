@@ -1,17 +1,53 @@
-[
-  {
-    "name"     : "Alice Bobson",
-    "packages" : [ "foo", "bar", "baz" ]
-  },
-  {
-    "name"     : "Bob Calsow",
-    "email"    : "bob@calsow.io",
-    "packages" : [ "foo", "bar" ]
-  },
-  {
-    "name"     : "Jonny John",
-    "github"   : "johnyjohn",
-    "twitter"  : "johnnyjohn",
-    "packages" : [ "foo" ]
-  }
-]
+{
+  "npm": [
+    {
+      "name"     : "Alice Bobson",
+      "packages" : [ "foo", "bar", "baz" ]
+    },
+    {
+      "name"     : "Bob Calsow",
+      "email"    : "bob@calsow.io",
+      "packages" : [ "foo", "bar" ]
+    },
+    {
+      "name"     : "Jonny John",
+      "github"   : "johnyjohn",
+      "twitter"  : "johnnyjohn",
+      "packages" : [ "foo" ]
+    }
+  ],
+  "jspm": [
+    {
+      "name"     : "Alice Bobson",
+      "packages" : [ "foo", "bar", "baz" ]
+    },
+    {
+      "name"     : "Bob Calsow",
+      "email"    : "bob@calsow.io",
+      "packages" : [ "foo", "bar" ]
+    },
+    {
+      "name"     : "Jonny John",
+      "github"   : "johnyjohn",
+      "twitter"  : "johnnyjohn",
+      "packages" : [ "foo" ]
+    }
+  ],
+  "bower": [
+    {
+      "name"     : "Alice Bobson",
+      "packages" : [ "foo", "bar", "baz" ]
+    },
+    {
+      "name"     : "Bob Calsow",
+      "email"    : "bob@calsow.io",
+      "packages" : [ "foo", "bar" ]
+    },
+    {
+      "name"     : "Jonny John",
+      "github"   : "johnyjohn",
+      "twitter"  : "johnnyjohn",
+      "packages" : [ "foo" ]
+    }
+  ]
+}
