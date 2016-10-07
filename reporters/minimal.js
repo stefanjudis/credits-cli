@@ -14,6 +14,9 @@ module.exports = function( name, credits ) {
   report += `${name} relies on the work of ${len} people:\n\n`;
 
   for (let pack in credits) {
+    if ( credits[pack].length > 0 ) {
+      report += `\n${pack}\n`;
+    }
     credits[pack].forEach( function( credit ) {
       var columns = [
         chalk.blue( credit.name )

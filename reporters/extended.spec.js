@@ -8,7 +8,7 @@ test.only( 'extended reporter', t => {
 
   t.same( result[ 0 ], 'Credits for foo' );
   t.same( result[ 1 ], 'foo relies on the work of 12 people:' );
-  t.same( result[ 3 ], '## npm' );
+  t.same( result[ 3 ], 'npm' );
   t.same( result[ 5 ], 'Alice Bobson' );
   t.same( result[ 6 ], '3 packages: foo, bar, baz' );
   t.same( result[ 7 ], '' );

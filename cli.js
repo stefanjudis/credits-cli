@@ -54,5 +54,5 @@ credits( creditPath )
  */
 function printCredits( credits ) {
   let projectName = creditPath.split( path.sep ).pop();
-  console.log( reporter( 'projectName', credits ) );
+  console.log( reporter( projectName, credits ) );
 }

@@ -74,10 +74,10 @@ test( 'credits - folder exists', t => {
 
     let result = fs.readFileSync( `${path}/test.txt`, { encoding : 'utf8' } ).split( '\n' );
 
-    t.same( result[ 3 ], 'Alice Bobson (3 packages)' );
-    t.same( result[ 4 ], 'Bob Calsow bob@calsow.io (2 packages)' );
-    t.same( result[ 5 ], 'Randy Ran (1 package)' );
-    t.same( result[ 6 ], 'Bobby Bob bobby@bob.io (1 package)' );
+    t.same( result[ 4 ], 'npm' );
+    t.same( result[ 5 ], 'Alice Bobson (3 packages)' );
+    t.same( result[ 6 ], 'Bob Calsow bob@calsow.io (2 packages)' );
+    t.same( result[ 7 ], 'Randy Ran (1 package)' );
     t.end();
 
     callback();
