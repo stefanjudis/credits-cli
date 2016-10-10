@@ -42,8 +42,7 @@ let creditPath = path.resolve( process.cwd(), cli.input[ 0 ] || '.' );
 credits( creditPath )
   .then( printCredits )
   .catch( function( error ) {
-    console.log( error );
-
+    console.log( 'error', error );
     process.exit( 1 );
   } );
 
@@ -55,6 +54,5 @@ credits( creditPath )
  */
 function printCredits( credits ) {
   let projectName = creditPath.split( path.sep ).pop();
-
   console.log( reporter( projectName, credits ) );
 }

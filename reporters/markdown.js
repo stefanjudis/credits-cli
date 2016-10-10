@@ -5,24 +5,40 @@ let plur    = require( 'plur' );
 module.exports = function( name, credits ) {
   let report = `# Credits for ${name}\n`;
 
-  report += `## ${name} relies on the work of ${credits.length} people:\n\n`;
+  let len = 0;
+  for (let pack in credits) {
+    len += credits[pack].length;
+  }
 
-  credits.forEach( function( credit ) {
-    let columns = [
-      `- **${credit.name}**`
-    ];
+  report += `## ${name} relies on the work of ${len} people:\n\n`;
 
-    if ( credit.email ) {
-      columns.push( `*${ credit.email || '' }*` );
+  for (let pack in credits) {
+    if ( credits[pack].length > 0 ) {
+      report += `\n## ${pack}\n\n`;
     }
+    credits[pack].forEach( function( credit ) {
+      let columns = ['-'];
 
-    let pkgCount = credit.packages.length;
+      if ( credit.name ) {
+        columns.push( `**${ credit.name || '' }**` );
+      }
 
-    columns.push( `(${pkgCount} ${plur( 'package', pkgCount )})` );
+      if ( credit.email ) {
+        columns.push( `*${ credit.email || '' }*` );
+      }
 
-    report += `${columns.join( ' ' )}\n`;
+      if ( columns.length === 1 ) {
+        columns.push( `Unknown` );
+      }
 
-  } );
+      let pkgCount = credit.packages.length;
+
+      columns.push( `(${pkgCount} ${plur( 'package', pkgCount )})` );
+
+      report += `${columns.join( ' ' )}\n`;
+
+    } );
+  }
 
   return report;
 };
