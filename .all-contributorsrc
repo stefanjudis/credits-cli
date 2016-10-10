@@ -1,0 +1,30 @@
+{
+  "projectName": "credits-cli",
+  "projectOwner": "stefanjudis",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 75,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Hypercubed",
+      "name": "Jayson Harshbarger",
+      "avatar_url": "https://avatars.githubusercontent.com/u/509946?v=3",
+      "profile": "http://www.hypercubed.com",
+      "contributions": [
+        "doc",
+        "code"
+      ]
+    },
+    {
+      "login": "sindresorhus",
+      "name": "Sindre Sorhus",
+      "avatar_url": "https://avatars.githubusercontent.com/u/170270?v=3",
+      "profile": "https://twitter.com/sindresorhus",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
+}

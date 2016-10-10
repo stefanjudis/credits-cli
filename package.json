@@ -10,6 +10,7 @@
     "cli.js"
   ],
   "scripts": {
+    "add": "all-contributors add",
     "lint": "eslint *.js",
     "test": "npm run lint && nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
@@ -34,6 +35,7 @@
     "plur": "^2.0.0"
   },
   "devDependencies": {
+    "all-contributors-cli": "^3.0.6",
     "ava": "^0.16.0",
     "coveralls": "^2.11.4",
     "eslint": "^3.7.1",
