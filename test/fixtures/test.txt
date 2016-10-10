@@ -1,0 +1,10 @@
+Credits for fixtures
+fixtures relies on the work of 4 people:
+
+
+npm
+Alice Bobson (3 packages)
+Bob Calsow bob@calsow.io (2 packages)
+Randy Ran (1 package)
+Bobby Bob bobby@bob.io (1 package)
+

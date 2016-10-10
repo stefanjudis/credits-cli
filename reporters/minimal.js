@@ -6,23 +6,33 @@ let plur  = require( 'plur' );
 module.exports = function( name, credits ) {
   let report = chalk.blue( `Credits for ${name}\n` );
 
-  report += `${name} relies on the work of ${credits.length} people:\n\n`;
+  let len = 0;
+  for (let pack in credits) {
+    len += credits[pack].length;
+  }
 
-  credits.forEach( function( credit ) {
-    var columns = [
-      chalk.blue( credit.name )
-    ];
+  report += `${name} relies on the work of ${len} people:\n\n`;
 
-    if ( credit.email ) {
-      columns.push( chalk.red( credit.email || '' ) );
+  for (let pack in credits) {
+    if ( credits[pack].length > 0 ) {
+      report += `\n${pack}\n`;
     }
+    credits[pack].forEach( function( credit ) {
+      var columns = [
+        chalk.blue( credit.name )
+      ];
 
-    var pkgCount = credit.packages.length;
+      if ( credit.email ) {
+        columns.push( chalk.red( credit.email || '' ) );
+      }
 
-    columns.push( `(${pkgCount } ${plur( 'package', pkgCount )})` );
+      var pkgCount = credit.packages.length;
 
-    report += `${columns.join( ' ' )}\n`;
-  } );
+      columns.push( `(${pkgCount } ${plur( 'package', pkgCount )})` );
+
+      report += `${columns.join( ' ' )}\n`;
+    } );
+  }
 
   return report;
 };

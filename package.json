@@ -1,14 +1,18 @@
 {
   "name": "credits-cli",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "https://github.com/stefanjudis/credits-cli",
   "bin": {
     "credits": "cli.js"
   },
+  "files": [
+    "reporters",
+    "cli.js"
+  ],
   "scripts": {
     "add": "all-contributors add",
     "lint": "eslint *.js",
-    "test": "npm run lint && nyc ava cli.spec.js reporters/*.spec.js",
+    "test": "npm run lint && nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
@@ -26,16 +30,17 @@
   "homepage": "https://github.com/stefanjudis/credits-cli#readme",
   "dependencies": {
     "chalk": "^1.1.1",
-    "credits": "^1.1.1",
+    "credits": "^2.0.0",
     "meow": "^3.5.0",
     "plur": "^2.0.0"
   },
   "devDependencies": {
     "all-contributors-cli": "^3.0.6",
-    "ava": "^0.6.0",
+    "ava": "^0.16.0",
     "coveralls": "^2.11.4",
-    "eslint": "^1.7.3",
-    "nyc": "^6.6.1",
-    "tmp": "0.0.28"
+    "eslint": "^3.7.1",
+    "execa": "^0.5.0",
+    "nyc": "^8.3.1",
+    "tmp": "0.0.29"
   }
 }
