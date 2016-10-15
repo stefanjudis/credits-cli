@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "add": "all-contributors add",
-    "lint": "eslint *.js",
+    "lint": "eslint *.js reporters/*.js test/*.js",
     "test": "npm run lint && nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
