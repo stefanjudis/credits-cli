@@ -8,15 +8,15 @@ module.exports = function( name, credits ) {
   let report = chalk.blue( `Credits for ${name}\n` );
 
   let len = 0;
-  for (let pack in credits) {
-    len += credits[pack].length;
+  for ( let pack in credits ) {
+    len += credits[ pack ].length;
   }
 
   report += `${name} relies on the work of ${len} people:\n\n`;
 
-  for (let pack in credits) {
-    report += `${pack}\n\n`
-    credits[pack].forEach( function( credit ) {
+  for ( let pack in credits ) {
+    report += `${pack}\n\n`;
+    credits[ pack ].forEach( function( credit ) {
       let columns = [
         [ chalk.blue( credit.name ) ],
         [],
