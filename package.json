@@ -30,7 +30,7 @@
   "homepage": "https://github.com/stefanjudis/credits-cli#readme",
   "dependencies": {
     "chalk": "^1.1.1",
-    "credits": "^2.0.0",
+    "credits": "^2.1.0",
     "meow": "^3.5.0",
     "plur": "^2.0.0"
   },
