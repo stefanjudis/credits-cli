@@ -55,7 +55,7 @@ credits( creditPath )
 function printCredits( credits ) {
   let projectName = '';
   try {
-    projectName = JSON.parse( fs.readFileSync( creditPath + '/package.json' ) ).name;
+    projectName = require( path.join( creditPath, '/package.json' ) ).name;
   } catch( err ) {
     projectName = creditPath.split( path.sep ).pop();
   }
