@@ -53,6 +53,6 @@ credits( creditPath )
  * @param  {Array} credits credits
  */
 function printCredits( credits ) {
-  let projectName = creditPath.split( path.sep ).pop();
+  let projectName = JSON.parse(fs.readFileSync(creditPath + "/package.json")).name;
   console.log( reporter( projectName, credits ) );
 }
