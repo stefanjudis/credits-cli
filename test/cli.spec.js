@@ -16,6 +16,7 @@ const path = nodePath.resolve( './fixtures' );
 test( 'credits - folder exists', t => {
   return execa( '../cli.js', [ path ] ).then( res => {
     const result = res.stdout.split( '\n' );
+    t.deepEqual( result[ 0 ], 'Credits for credits-cli-test' );
     t.deepEqual( result[ 4 ], 'npm' );
     t.deepEqual( result[ 5 ], 'Alice Bobson (3 packages)' );
     t.deepEqual( result[ 6 ], 'Bob Calsow bob@calsow.io (2 packages)' );
