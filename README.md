@@ -16,6 +16,12 @@ We all use a lot of open source projects. Really often we don't even know who is
 npm install -g credits-cli
 ```
 
+Also you can use `credits` without global installation, using [`npx`](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner):
+
+```
+npx credits-cli
+```
+
 ## Basic usage
 
 `credits` will check all `node_modules` recursively and evaluate the **Author** and **Maintainers** of the **installed** dependencies included in the set path.
